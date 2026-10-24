@@ -1,0 +1,185 @@
+цикл for 
+1.Вывод чисел от 1 до 10 
+for i in range(1, 11):
+    print(i, end=" ")
+2. Четные числа от 2 до 50 
+for i in range(2,51, 2);
+    print(i, end=" ")
+3. Обратный отсчет от 10 до 1 
+for i in range(10, 0, -1):
+    print(i, end = " ")
+4. Сумма чисел от 1 до n 
+n = int(input("Введите число n:"))
+s = 0 
+for i in range(1, n + 1):
+    s += 1 
+print(f"Сумма чисел от 1 до {n} равна: {s}")
+5. Факториал числа n 
+
+n = int(input("Введите число n: "))
+factorial = 1
+
+for i in range(1, n + 1):
+    factorial *= i
+
+print(f"Факториал числа {n} равен: {factorial}")
+6. таблица умножения 
+n = int(input("Введите число n: "))
+
+for i in range(1, 11):
+    print(f"{n} x {i} = {n * i}")
+
+7. подсчет положительных чисел в списке 
+numbers = [-5, 3, 0, 12, -1, 7, 8, -4]
+count = 0
+
+for i in numbers:
+    if i > 0:
+        count += 1
+
+print(f"Количество положительных чисел: {count}")
+8. Подсчёт главных букв в строке 
+text = "Программирование на Python"
+vowels = "аеёиоуыэюяaeiou"
+count = 0
+
+for char in text.lower():
+    if char in vowels:
+        count += 1
+
+print(f"Количество гласных букв: {count}")
+
+
+9. поиск максимального элемента без функции max 
+
+numbers = [23, 45, 12, 89, 4, 56, 71]
+max_num = numbers[0]
+
+for i in numbers:
+    if i > max_num:
+        max_num = i
+
+print(f"Наибольший элемент в списке: {max_num}") 
+
+10. таблица умножения квадрата от 1 до 10 
+
+for i in range(1, 10):
+    for j in range(1, 10):
+        print(i * j, end="\t")
+    print()  
+цикл while 
+1. Вывод чисел от 1 до 10 
+i = 1
+while i <= 10:
+    print(i, end=" ")
+    i += 1
+2. Сумма чисел до ввода нуля 
+total_sum = 0
+
+while True:
+    number = int(input("Введите число (0 для выхода): "))
+    if number == 0:
+        break
+    total_sum += number
+
+print(f"Сумма введённых чисел: {total_sum}")
+
+3.Количество цифр в числе 
+n = int(input("Введите натуральное число: "))
+count = 0
+
+if n == 0:
+    count = 1
+else:
+    while n > 0:
+        count += 1
+        n //= 10
+
+print(f"Количество цифр: {count}")
+4. Сумма цифр числа 
+
+n = int(input("Введите натуральное число: "))
+digits_sum = 0
+
+while n > 0:
+    last_digit = n % 10
+    digits_sum += last_digit
+    n //= 10
+
+print(f"Сумма цифр: {digits_sum}")
+
+
+5. Переворот числа 
+
+n = int(input("Введите натуральное число: "))
+reversed_num = 0
+
+while n > 0:
+    last_digit = n % 10
+    reversed_num = reversed_num * 10 + last_digit
+    n //= 10
+
+print(f"Число в обратном порядке: {reversed_num}")
+
+
+6. Степени двойки не превышающие n 
+n = int(input("Введите число n: "))
+power = 1
+
+while power <= n:
+    print(power, end=" ")
+    power *= 2
+
+7.Проверка правильного пароля 
+correct_password = "python_secret"
+user_input = ""
+
+while user_input != correct_password:
+    user_input = input("Введите пароль: ")
+    if user_input != correct_password:
+        print("Неверно! Попробуйте ещё раз.")
+
+print("Доступ разрешён!")
+
+8. Наибольший общий делитель 
+
+a = int(input("Введите первое число: "))
+b = int(input("Введите второе число: "))
+
+while a != 0 and b != 0:
+    if a > b:
+        a %= b
+    else:
+        b %= a
+
+nod = a + b  
+print(f"Наибольший общий делитель: {nod}")
+
+9. Поиск числа Фибоначчи до n 
+n = int(input("Введите ограничение n: "))
+a, b = 0, 1
+
+while a <= n:
+    print(a, end=" ")
+    a, b = b, a + b
+
+10. Игра угадай число 
+import random
+
+# Загадываем число от 1 до 100
+secret_number = random.randint(1, 100)
+attempts = 0
+
+print("Я загадал число от 1 до 100. Попробуй угадать!")
+
+while True:
+    user_guess = int(input("Ваш вариант: "))
+    attempts += 1
+    
+    if user_guess < secret_number:
+        print("Больше!")
+    elif user_guess > secret_number:
+        print("Меньше!")
+    else:
+        print(f"Поздравляю! Вы угадали число за {attempts} попыток.")
+        break
