@@ -1,0 +1,87 @@
+# 1. Оценка ученика по имени
+students = {"Анна": 5, "Иван": 4, "Сергей": 3}
+
+
+name = "Анна"
+print(f"Оценка ученика {name}: {students[name]}")
+
+# 2. Изменение, добавление и удаление элементов
+data = {"a": 1, "b": 2, "c": 3}
+data["d"] = 4
+data["b"] = 20
+del data["c"]
+print(data)
+#3.  Безопасное получение значения по ключу
+my_dict = {"apple": 100, "banana": 150}
+key_to_find = "orange"
+
+
+result = my_dict.get(key_to_find, "Нет такого ключа")
+print(result)
+#4. Вывод ключей, значений и количества пар
+info = {"name": "Alex", "age": 25, "city": "Moscow"}
+
+print("Ключи:", list(info.keys()))
+print("Значения:", list(info.values()))
+print("Количество пар:", len(info))
+#5.Построчный вывод товаров и цен
+products = {"Хлеб": 50, "Молоко": 90, "Сыр": 350}
+
+
+for product, price in products.items():
+    print(f"Товар: {product}, Цена: {price}")
+
+#6. Сумма цен и самый дорогой товар
+store = {"Смартфон": 45000, "Ноутбук": 85000, "Наушники": 12000}
+
+
+most_expensive = max(store, key=store.get)
+
+
+print(f"Самый дорогой товар: {most_expensive}")
+#7. Подсчет символов в строке
+text = "программа"
+char_count = {}
+
+
+for char in text:
+    char_count[char] = char_count.get(char, 0) + 1
+
+print(char_count)
+
+#8. Подсчет слов и поиск самого частого
+sentence = "яблоко банан яблоко апельсин банан яблоко"
+
+
+words = sentence.split()
+word_count = {}
+
+for word in words:
+    word_count[word] = word_count.get(word, 0) + 1
+
+
+most_frequent_word = max(word_count, key=word_count.get)
+
+print(f"Частота слов: {word_count}")
+print(f"Самое частое слово: {most_frequent_word}")
+#9. Инвертирование словаря
+original_dict = {"A": 1, "B": 2, "C": 3}
+
+
+inverted_dict = {value: key for key, value in original_dict.items()}
+
+print(inverted_dict)
+#10 Создание словаря из двух списков и поиск страницы
+
+countries = ["Россия", "Франция", "Япония"]
+capitals = ["Москва", "Париж", "Токио"]
+
+
+geo_dict = dict(zip(countries, capitals))
+
+
+user_country = input("Введите страну: ")
+
+
+result_capital = geo_dict.get(user_country, "Такой страны нет в базе данных")
+print(f"Столица: {result_capital}")
